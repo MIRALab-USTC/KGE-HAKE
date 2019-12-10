@@ -8,20 +8,20 @@ This is the code of paper **Learning Hierarchy-Aware Knowledge Graph Embeddings 
 ## Results
 The results of **HAKE** and the baseline model **ModE** on **WN18RR**, **FB15k-237** and **YAGO3-10** are as follows.
  
-#### WN18RR
+### WN18RR
 | | MRR |  HITS@1 | HITS@3 | HITS@10 |
 |:----------:|:----------:|:----------:|:----------:|:----------:|
 | ModE | 0.472 | 0.427 | 0.486 | 0.564 |
 | HAKE | 0.496 ± 0.001 | 0.452 | 0.516 | 0.582 |
 
 
-#### FB15k-237
+### FB15k-237
 | | MRR | HITS@1 | HITS@3 | HITS@10 |
 |:----------:|:----------:|:----------:|:----------:|:----------:|
 | ModE | 0.341 |  0.244 | 0.380 | 0.534 |
 | HAKE | 0.345 ± 0.001 |  0.250 | 0.381 | 0.542 |
 
-#### YAGO3-10
+### YAGO3-10
 | | MRR | HITS@1 | HITS@3 | HITS@10 |
 |:----------:|:----------:|:----------:|:----------:|:----------:|
 | ModE | 0.510 |  0.421 | 0.562 | 0.660 |
@@ -29,9 +29,22 @@ The results of **HAKE** and the baseline model **ModE** on **WN18RR**, **FB15k-2
 
 
 ## Running the code 
+
+### Usage
+```
+bash runs.sh {train | valid | test} {ModE | HAKE} {wn18rr | FB15k-237 | YAGO3-10} <gpu_id> \
+<save_id> <train_batch_size> <negative_sample_size> <hidden_dim> <gamma> <alpha> \
+<learning_rate> <num_train_steps> <test_batch_size> [modulus_weight] [phase_weight]
+```
+- `{ | }`: Mutually exclusive items. Choose one from them.
+- `< >`: Placeholder for which you must supply a value.
+- `[ ]`: Optional items.
+
+Note that `[modulus_weight]` and `[phase_weight]` are avaiable only for the `HAKE` model.
+
 To reproduce the results of HAKE and ModE, run the following commands.
 
-#### HAKE
+### HAKE
 ```
 # WN18RR
 bash runs.sh train HAKE wn18rr 0 0 512 1024 500 6.0 0.5 0.00005 80000 8 1.0 0.5
@@ -43,7 +56,7 @@ bash runs.sh train HAKE FB15k-237 0 0 1024 256 1000 9.0 1.0 0.00005 100000 16 3.
 bash runs.sh train HAKE YAGO3-10 0 0 1024 256 500 24.0 1.0 0.0002 180000 4 1.0 0.5
 ```
 
-#### ModE
+### ModE
 ```
 # WN18RR
 bash runs.sh train ModE wn18rr 0 0 512 1024 500 6.0 0.5 0.0001 80000 8 --no_decay

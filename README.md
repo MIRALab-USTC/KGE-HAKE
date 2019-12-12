@@ -71,11 +71,11 @@ bash runs.sh train ModE YAGO3-10 0 0 1024 256 500 24.0 1.0 0.0002 80000 4
 ## Citation
 If you find this code useful, please consider citing the following paper.
 ```
-@article{zhang2019learning,
+@inproceedings{zhang2020learning,
   title={Learning Hierarchy-Aware Knowledge Graph Embeddings for Link Prediction},
   author={Zhang, Zhanqiu and Cai, Jianyu and Zhang, Yongdong and Wang, Jie},
-  journal={arXiv preprint arXiv:1911.09419},
-  year={2019}
+  booktitle={Thirty-Fourth AAAI Conference on Artificial Intelligence},
+  year={2020}
 }
 ```
 

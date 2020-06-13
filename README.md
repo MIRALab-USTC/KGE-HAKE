@@ -74,7 +74,9 @@ If you find this code useful, please consider citing the following paper.
 @inproceedings{zhang2020learning,
   title={Learning Hierarchy-Aware Knowledge Graph Embeddings for Link Prediction},
   author={Zhang, Zhanqiu and Cai, Jianyu and Zhang, Yongdong and Wang, Jie},
-  booktitle={Thirty-Fourth AAAI Conference on Artificial Intelligence},
+  booktitle={Thirty-Fourth {AAAI} Conference on Artificial Intelligence},
+  pages={3065--3072},
+  publisher={{AAAI} Press},
   year={2020}
 }
 ```

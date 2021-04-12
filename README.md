@@ -68,6 +68,9 @@ bash runs.sh train ModE FB15k-237 0 0 1024 256 1000 9.0 1.0 0.0001 100000 16
 bash runs.sh train ModE YAGO3-10 0 0 1024 256 500 24.0 1.0 0.0002 80000 4
 ```
 
+## Visualization
+To plot entity embeddings on a 2D plane (Figure 4 in our paper), please refer to this [issue](https://github.com/MIRALab-USTC/KGE-HAKE/issues/2).
+
 ## Citation
 If you find this code useful, please consider citing the following paper.
 ```
